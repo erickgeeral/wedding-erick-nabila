@@ -24,6 +24,12 @@ body {
   filter: grayscale();
 }
 
+#nama-span{
+  text-shadow: var(--shadow);
+  color: black;
+  font-size: 1.6rem;
+}
+
 .hero {
   position: relative;
   min-height: 100vh;
@@ -39,6 +45,7 @@ body {
 .hero h1 {
   font-family: 'Sacramento', cursive;
   font-size: 6rem;
+  margin-top: 10px;
 }
 
 .hero h4 {

@@ -30,7 +30,8 @@
   <section id="hero"
     class="hero w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center text-white">
     <main>
-      <h4>Kepada <span>Bapak/Ibu/Saudara/i, </span></h4>
+      <h4>Kepada <span>Bapak/Ibu/Saudara/i,</span></h4>
+        <span id="nama-span"></span>
       <h1>Erick & Nabila </h1>
       <p>Akan melangsungkan resepsi pernikahan dalam:</p>
       <div class="simply-countdown"></div>
@@ -272,9 +273,9 @@
           </a>
         </div>
         <div class="col mt-3">
-          <a href="img/gallery/14.JPG" data-toggle="lightbox" data-caption="Erick & Nabila 6"
+          <a href="img/gallery/14.jpg" data-toggle="lightbox" data-caption="Erick & Nabila 6"
             data-gallery="mygallery">
-            <img src="img/gallery/14.JPG" alt="Erick & Nabila 6" class="img-fluid w-100 rounded">
+            <img src="img/gallery/14.jpg" alt="Erick & Nabila 6" class="img-fluid w-100 rounded">
           </a>
         </div>
         <div class="col mt-3">
@@ -284,9 +285,9 @@
           </a>
         </div>
         <div class="col mt-3">
-          <a href="img/gallery/12.JPG" data-toggle="lightbox" data-caption="Erick & Nabila 8"
+          <a href="img/gallery/12.jpg" data-toggle="lightbox" data-caption="Erick & Nabila 8"
             data-gallery="mygallery">
-            <img src="img/gallery/12.JPG" alt="Erick & Nabila 8" class="img-fluid w-100 rounded">
+            <img src="img/gallery/12.jpg" alt="Erick & Nabila 8" class="img-fluid w-100 rounded">
           </a>
         </div>
       </div>
@@ -526,15 +527,20 @@
     });
 
   </script>
-  <script>
-    const urlParams = new URLSearchParams(window.location.search);
-    const nama = urlParams.get('n') || '';
-    const pronoun = urlParams.get('p') || 'Bapak/Ibu/Saudara/i';
-    const namaContainer = document.querySelector('.hero h4 span');
-    namaContainer.innerText = `${pronoun} ${nama},`.replace(/ ,$/, ',');
+<script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const nama = urlParams.get('n') || '';
+  const pronoun = urlParams.get('p') || 'Bapak/Ibu/Saudara/i';
+  
+  // Set pronoun pada h4 seperti biasa
+  const namaContainer = document.querySelector('.hero h4 span');
+  namaContainer.innerText = `${pronoun},`; // Hanya menambahkan koma setelah pronoun
 
-    document.querySelector('#nama').value = nama;
-  </script>
+  // Menyimpan nama di bawah h4
+  const namaSpan = document.querySelector('#nama-span');
+  namaSpan.innerText = nama ? `${nama},` : ''; // Menambahkan nama ke span yang baru
+</script>
+
   
 </body>
 
